@@ -36,7 +36,20 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Include apps
+    'registration', # Django-registraion-redux1.1
+    'bootstrap3', # For registration templates
 )
+
+# Django registration settings
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+DEFAULT_FROM_MAIL = 'saurabhav.torres@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'saurabhav.torres@gmail.com'
+EMAIL_HOST_PASSWORD = 'Gunnu@2405'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -46,6 +59,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+# Configure location of templates
+TEMPLATE_DIRS = (
+    os.path.join( BASE_DIR, 'templates/' ),
+    )
 
 ROOT_URLCONF = 'Base_Template.urls'
 
