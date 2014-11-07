@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load bootstrap3 %}
-{% block title %}DEMO{% endblock %}
+{% block title %}Base Template{% endblock %}
 {% block nav_user %}
   {% if user.is_authenticated %}
     <ul class="nav navbar-nav navbar-right">
-      <li id="nav-username"><a href="home/">
+      <li id="nav-username"><a href="/home/">
         <span class="glyphicon glyphicon-user"></span>  {{ user.get_username }} &nbsp; </a>
       </li>
       <li>
@@ -18,7 +18,7 @@
       {% csrf_token %}
       {% bootstrap_field form.username show_label=False %}
       {% bootstrap_field form.password show_label=False %}
-      <input type="hidden" name="next" value="home/" />
+      <input type="hidden" name="next" value="/home/" />
       <button type="submit" class="btn btn-success">Sign in</button>
     </form>
   {% endif %}
@@ -27,8 +27,9 @@
 	<div class="container">
       <div class="jumbotron">
 		<div class="container">
-          <h1>DEMO</h1>
-          <p class="lead">django-registration demo using Bootstrap 3</p>
+          <h1>Base Template</h1>
+          <br>
+          <p class="lead"></p>
 		  {% if not user.is_authenticated %}
             <p><a class="btn btn-lg btn-primary" 
 				  href="{% url 'registration_register' %}">Register</a> 

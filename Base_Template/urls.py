@@ -38,6 +38,6 @@ urlpatterns = patterns('',
                     auth_views.password_reset_confirm,
                     name='password_reset_confirm'),
     # ------------------------------------------------------
-    url(r'^$', 'home', name='home'),
-    url(r'^profile/$', 'profile', name='profile'),
+    url(r'^$', home, name='home'),
+    url(r'^profile/$', profile, name='profile'),
 )
